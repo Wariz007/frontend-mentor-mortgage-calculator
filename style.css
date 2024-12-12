@@ -2,7 +2,7 @@
     --dark-blue: #143340;
     --light-blue: #DCECF2;
     --dark-green: #BCBF56;
-    --light-green: #F1F2C2;
+    --light-green: #e3e483;
     --bright-green: #D9CE32;
     --white: #ffffff;
     --stroke-blue: #70bedb;
@@ -10,6 +10,7 @@
 
 /*reset browser default settings*/
 html, body{
+    overflow-x: hidden;
     padding: 0;
     margin: 0;
     box-sizing: 0;
@@ -33,6 +34,20 @@ html, body{
     box-shadow: 7px 10px 20px 2px hsl(0, 0%, 75%);
 }
 
+@media (max-width: 768px) {
+    #main-div{
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+
 /*right side container code*/
 #right-side-container{
     position: absolute;
@@ -51,9 +66,26 @@ html, body{
     margin-left: 1rem;
 }
 
+@media (max-width: 768px){
+    #right-side-container{
+        position: relative;
+        border-radius: 0;
+        right: 50%;
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
 #illustration{
     width: 12rem;
     margin-bottom: 1rem;
+}
+
+@media (max-width: 768px){
+    #illustration{
+        margin-top: 1rem;
+    }
 }
 
 #p-right{
@@ -67,10 +99,24 @@ h2{
     margin-bottom: 1.5rem;
 }
 
+@media (max-width: 768px){
+    #p-right-down{
+        margin-bottom: 2rem;
+    }
+}
+
 /*left side container code*/
 #left-side-container{
     width: 44%;
     padding: 30px 40px 40px 30px;
+}
+
+@media (max-width: 768px){
+    #left-side-container{
+        width: 90%;
+        padding: 30px 30px 0 30px;
+        margin-bottom: 2rem;
+    }
 }
 
 #left-line-1{
@@ -80,11 +126,27 @@ h2{
     margin-bottom: 3rem;
 }
 
+@media (max-width: 768px){
+    #left-line-1{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-sizing: border-box;
+    }
+}
+
 a{
     color: grey;
 }
 h1{
     font-size: 1.5rem;
+}
+
+@media (max-width: 768px){
+    h1{
+        margin-bottom: 2.5rem;
+        font-size: 2rem;
+    }
 }
 
 #mortgage-and-interest-container{
@@ -115,7 +177,18 @@ h1{
     background-color: var(--bright-green);
     font-size: 1rem;
     font-weight: bold;
-    
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    #btn{
+        width: 100%;
+    }
+}
+
+#btn:hover{
+    background-color: var(--light-green);
 }
 
 #calculator{
@@ -131,11 +204,27 @@ input[type="number"]{
     padding: 1rem;
     box-sizing: border-box;
     border: 1.5px solid var(--stroke-blue);
+    border-radius: 5px;
+    font-size: 2rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
 }
+
+input[type="number"]:hover{
+    border-color: var(--dark-blue);
+}
+
 
 .repayment-and-interest{
     border: 1.5px solid var(--stroke-blue);
     margin: 0.5rem 0;
-    padding: 1rem 0;
+    padding: 1rem 0 1rem 0.5rem;
     background-color: var(--white);
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.repayment-and-interest:hover{
+    border-color: var(--light-green);
 }
