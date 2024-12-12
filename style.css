@@ -65,6 +65,8 @@ html, body{
     background-color: var(--dark-blue);
     color: white;
     margin-left: 1rem;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px){
@@ -90,37 +92,30 @@ html, body{
 }
 
 #p-right{
-    margin-bottom: 0.5rem;
-}
-#right-side-container p{
+    margin-top: 0;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    text-align: center;
     opacity: 50%;
+    font-size: 1rem;
 }
 
-h2{
-    margin-bottom: 1.5rem;
-}
-
-@media (max-width: 768px){
-    #p-right-down{
-        margin-bottom: 2rem;
-    }
+#right-side-container h2{
+    margin-bottom: 2rem;
 }
 
 /*left side container code*/
 #left-side-container{
+    width: 45%;
     padding: 30px 40px 40px 30px;
 }
 
 @media (max-width: 768px){
     #left-side-container{
+        box-sizing: border-box;
+        width: 100%;
         padding: 30px;
         margin-bottom: 2rem;
-    }
-}
-
-@media (max-width: 380px){
-    #left-side-container{
-        padding: 20px;
     }
 }
 
@@ -136,7 +131,6 @@ h2{
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        box-sizing: border-box;
     }
 }
 
@@ -151,6 +145,13 @@ h1{
     h1{
         margin-bottom: 2.5rem;
         font-size: 2rem;
+    }
+}
+
+@media (max-width: 365px){
+    h1{
+        margin-bottom: 2.5rem;
+        font-size: 1.7rem;
     }
 }
 
