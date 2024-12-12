@@ -24,6 +24,7 @@
       <!--line 2-->
       <label for="mortgage-amount">Mortgage Amount</label><br>
       <input type="number" id="mortgage-amount">
+      <p id="mortgage-amount-error-message">This field is required</p>
 
       <!--line 3-->
       <div id="mortgage-and-interest-container">
@@ -31,11 +32,13 @@
         <div id="mortgage-container" class="m-and-i">
           <label for="mortgage-term">Mortgage Term</label>
           <input type="number" id="mortgage-term">
+          <p id="mortgage-term-error-message">This field is required</p>
         </div>
 
         <div id="interest-rate-container" class="m-and-i">
           <label for="interest-rate">Interest Rate</label>
-          <input type="number" id="interest rate">
+          <input type="number" id="interest-rate">
+          <p id="interest-rate-error-message">This field is required</p>
         </div>
 
       </div>
@@ -53,7 +56,7 @@
         <label for="interest-only">Interest Only</label>
         </div>
         
-
+        <p id="rOrI-error-message">This field is required</p>
       </div>
 
       <!--line 5-->
@@ -67,7 +70,7 @@
 
 
     <!--right side content container-->
-    <div id="right-side-container">
+    <div id="right-side-container" style="display: none;">
 
     <img src="/assets/images/illustration-empty.svg" id="illustration">
     <h2>Results show here</h2>
@@ -77,6 +80,26 @@
     <p id="p-right-down">
       to see what your monthly repayments would be
     </p>
+    </div>
+
+    <div id="your-results-container" style="display: 0;">
+      <h2>Your result</h2>
+      <p class="instructions">Your results are shown below based on the information</p>
+      <p class="instructions">you provided. To adjust the results, edit the form and </p>
+      <p class="instructions">click "calculate repayments" again</p>
+
+      <div id="inner-container">
+        <div id="result-container">
+          <p>Your monthly repayment</p>
+          <p id="the-result">£1,797.74</p>
+        </div>
+
+        <p id="instructions-2">Total you'll repay over the term</p>
+        <p id="payment-over-term">£539,322.94</p>
+      </div>
+      
+
+
     </div>
   </div>
 </body>

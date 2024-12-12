@@ -6,6 +6,7 @@
     --bright-green: #D9CE32;
     --white: #ffffff;
     --stroke-blue: #70bedb;
+    --inner-dark-blue: #0E2431;
 }
 
 /*reset browser default settings*/
@@ -37,7 +38,7 @@ html, body{
 @media (max-width: 768px) {
     #main-div{
         width: 100%;
-        height: 100vh;
+        height: 100%;
         margin: 0;
         flex-direction: column;
         align-items: stretch;
@@ -227,4 +228,88 @@ input[type="number"]:hover{
 }
 .repayment-and-interest:hover{
     border-color: var(--light-green);
+}
+
+/*Error message container code*/
+#mortgage-amount-error-message{
+    margin: 0 0 2.5rem;
+    color: red;
+    display: none;
+}
+
+#mortgage-term-error-message{
+    margin: 0 0 2.5rem;
+    color: red;
+    display: none;
+}
+
+#interest-rate-error-message{
+    margin: 0 0 2.5rem;
+    color: red;
+    display: none;
+}
+
+#rOrI-error-message{
+    margin: 1rem 0 2.5rem;
+    color: red;
+    display: none;
+}
+
+/*your results container code*/
+#your-results-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    padding: 1rem 2rem 2rem;
+    color: var(--white);
+    background-color: var(--dark-blue);
+    border-radius: 0 20px 20px 80px;
+}
+
+@media (max-width: 768px){
+    #your-results-container{
+        position: relative;
+        border-radius: 0;
+        right: 50%;
+        left: 0;
+        
+        
+    }
+}
+
+h2{
+    margin: 2rem 0 2.5rem;
+}
+
+.instructions{
+    opacity: 50%;
+    margin-bottom: 1.5rem;
+}
+
+#result-container{
+    border-bottom: 1px solid hsla(0, 0%, 40%, 0.699);
+}
+
+#inner-container{
+    background-color: var(--inner-dark-blue);
+    padding: 2rem;
+    border-radius: 10px;
+    border-top: 4px solid var(--bright-green);
+    margin-top: 3rem;
+}
+
+#the-result{
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 100%;
+    color: var(--bright-green);
+}
+
+#instructions-2{
+    margin: 3rem 0 2rem;
+}
+
+#payment-over-term{
+    font-size: 1.5rem;
 }
