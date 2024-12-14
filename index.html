@@ -22,21 +22,26 @@
       </div>
       
       <!--line 2-->
-      <label for="mortgage-amount">Mortgage Amount</label><br>
-      <input type="number" id="mortgage-amount">
-      <p id="mortgage-amount-error-message">This field is required</p>
+      <div id="mortgage-amount-container">
+        <label for="mortgage-amount">Mortgage Amount</label><br>
+        <span class="input-sign">£</span>
+        <input type="number" id="mortgage-amount">
+        <p id="mortgage-amount-error-message">This field is required</p>
+      </div>
 
       <!--line 3-->
       <div id="mortgage-and-interest-container">
 
         <div id="mortgage-container" class="m-and-i">
           <label for="mortgage-term">Mortgage Term</label>
+          <span class="input-sign">Years</span>
           <input type="number" id="mortgage-term">
           <p id="mortgage-term-error-message">This field is required</p>
         </div>
 
         <div id="interest-rate-container" class="m-and-i">
           <label for="interest-rate">Interest Rate</label>
+          <span class="input-sign">%</span>
           <input type="number" id="interest-rate">
           <p id="interest-rate-error-message">This field is required</p>
         </div>

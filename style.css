@@ -6,6 +6,7 @@
     --bright-green: #D9CE32;
     --white: #ffffff;
     --stroke-blue: #70bedb;
+    --signs-background: #b7dae7;
     --inner-dark-blue: #0E2431;
 }
 
@@ -161,6 +162,49 @@ h1{
 
 #mortgage-container{
     margin-right: 1rem;
+    position: relative;
+}
+
+#mortgage-container .input-sign{
+    position: absolute;
+    font-size: 1rem;
+    right: 1.2px;
+    top: 26%;
+    padding: 23px 23px 22.5px 20px;
+    border-radius: 0 5px 5px 0;
+    color: var(--inner-dark-blue);
+    background-color: var(--signs-background);
+}
+
+#interest-rate-container{
+    position: relative;
+}
+
+#interest-rate-container .input-sign{
+    position: absolute;
+    font-size: 1.3rem;
+    right: 1.2px;
+    top: 26%;
+    padding: 23px 23px 22.5px 20px;
+    border-radius: 0 5px 5px 0;
+    color: var(--inner-dark-blue);
+    background-color: var(--signs-background);
+}
+
+#mortgage-amount-container{
+    position: relative;
+}
+
+#mortgage-amount-container .input-sign{
+    position: absolute;
+    font-size: 1.5rem;
+    top: 26%;
+    left: 1px;
+    pointer-events: none;
+    color: var(--inner-dark-blue);
+    padding: 23px 23px 22.5px 20px;
+    background-color: var(--signs-background);
+    border-radius: 5px 0 0 5px;
 }
 
 .m-and-i{
@@ -218,7 +262,11 @@ input[type="number"]{
 }
 
 input[type="number"]:hover{
-    border-color: var(--dark-blue);
+    border: 1.5px solid var(--inner-dark-blue);
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 
