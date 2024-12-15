@@ -24,7 +24,7 @@
       <!--line 2-->
       <div id="mortgage-amount-container">
         <label for="mortgage-amount">Mortgage Amount</label><br>
-        <span class="input-sign">£</span>
+        <span class="input-sign mortgageAmountSign">£</span>
         <input type="number" id="mortgage-amount">
         <p id="mortgage-amount-error-message">This field is required</p>
       </div>
@@ -56,7 +56,7 @@
         <label for="repayment">Repayment</label>
         </div>
         
-        <div class="repayment-and-interest">
+        <div class="repayment-and-interest" id="Interest-container">
         <input type="radio" id="interest-only" name="radios">
         <label for="interest-only">Interest Only</label>
         </div>
@@ -75,7 +75,7 @@
 
 
     <!--right side content container-->
-    <div id="right-side-container" style="display: 0;">
+    <div id="right-side-container" style="display: 0;" class="defaultPage">
 
     <img src="./assets/images/illustration-empty.svg" id="illustration">
     <h2>Results show here</h2>
@@ -84,7 +84,7 @@
     </p>
     </div>
 
-    <div id="your-results-container" style="display: none;">
+    <div id="your-results-container" style="display: none;" class="calculationsPage">
       <h2>Your result</h2>
       <p id="instructions">Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again</p>
 
@@ -102,5 +102,7 @@
 
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

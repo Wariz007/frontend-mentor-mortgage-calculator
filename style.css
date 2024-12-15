@@ -29,7 +29,7 @@ html, body{
     justify-content: space-between;
     align-items: center;
     width: 55rem;
-    height: 34rem;
+    height: 37rem;
     margin: 5rem auto;
     background-color: white;
     border-radius: 20px;
@@ -109,6 +109,7 @@ html, body{
 #left-side-container{
     width: 45%;
     padding: 30px 40px 40px 30px;
+    overflow: hidden;
 }
 
 @media (max-width: 768px){
@@ -124,7 +125,8 @@ html, body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
 }
 
 @media (max-width: 768px){
@@ -158,6 +160,7 @@ h1{
 
 #mortgage-and-interest-container{
     display: flex;
+    margin-bottom: 1rem;
 }
 
 #mortgage-container{
@@ -165,46 +168,102 @@ h1{
     position: relative;
 }
 
+#mortgage-term{
+    margin-bottom: 1rem;
+}
+#mortgage-term:focus{
+    border-color: var(--bright-green);
+    outline: none;
+}
+
 #mortgage-container .input-sign{
     position: absolute;
     font-size: 1rem;
-    right: 1.2px;
-    top: 26%;
-    padding: 23px 23px 22.5px 20px;
+    right: 1.8px;
+    pointer-events: none;
+    top: 28.5%;
+    padding: 20.5px 23px 24.5px 20.5px;
     border-radius: 0 5px 5px 0;
     color: var(--inner-dark-blue);
     background-color: var(--signs-background);
+}
+#mortgage-container .input-sign.red{
+    background-color: red;
+    color: var(--white);
+}
+#mortgage-container .input-sign.active{
+    background-color: var(--bright-green);
+    color: var(--white);
 }
 
 #interest-rate-container{
     position: relative;
 }
 
+#interest-rate{
+    margin-bottom: 1rem;
+}
+#interest-rate:focus{
+    border-color: var(--bright-green);
+    color: var(--white);
+    outline: none;
+}
+
 #interest-rate-container .input-sign{
     position: absolute;
     font-size: 1.3rem;
-    right: 1.2px;
-    top: 26%;
-    padding: 23px 23px 22.5px 20px;
+    right: 1.5px;
+    pointer-events: none;
+    top: 28.5%;
+    padding: 20.5px 23px 24.5px 20.5px;
     border-radius: 0 5px 5px 0;
     color: var(--inner-dark-blue);
     background-color: var(--signs-background);
 }
+#interest-rate-container .input-sign.red{
+    background-color: red;
+    color: var(--white);
+}
+#interest-rate-container .input-sign.active{
+    background-color: var(--bright-green);
+    color: var(--white);
+}
+
 
 #mortgage-amount-container{
     position: relative;
+    margin: 2.5rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#mortgage-amount{
+    margin-bottom: 1rem;
+    padding-left: 3.9rem;
+}
+#mortgage-amount:focus{
+    border-color: var(--light-green);
+    outline: none;
 }
 
 #mortgage-amount-container .input-sign{
     position: absolute;
     font-size: 1.5rem;
-    top: 26%;
-    left: 1px;
+    top: 26.5%;
+    padding: 20.5px 23px 24.5px 20.5px;
+    left: 1.5px;
     pointer-events: none;
     color: var(--inner-dark-blue);
-    padding: 23px 23px 22.5px 20px;
+    padding: 20.5px 23px 24.5px 20.5px;
     background-color: var(--signs-background);
     border-radius: 5px 0 0 5px;
+}
+#mortgage-amount-container .input-sign.red{
+    background-color: red;
+    color: var(--white);
+}
+#mortgage-amount-container .input-sign.active{
+    background-color: var(--bright-green);
+    color: var(--white);
 }
 
 .m-and-i{
@@ -214,10 +273,15 @@ h1{
 #radios-container{
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+#Interest-container{
+    margin-bottom: 1.5rem;
 }
 
 #btn{
-    margin-top: 1rem;
+    margin: 2rem 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -282,30 +346,50 @@ input[type="number"] {
 .repayment-and-interest:hover{
     border-color: var(--light-green);
 }
+.repayment-and-interest.active{
+    border-color: var(--bright-green);
+    background-color: var(--light-green);
+}
 
 /*Error message container code*/
 #mortgage-amount-error-message{
-    margin: 0 0 2.5rem;
+    margin: 0;
     color: red;
-    display: none;
+    visibility: hidden;
+    font-size: 0.8rem;
+}
+#mortgage-amount-error-message.visible{
+    visibility: visible;
 }
 
 #mortgage-term-error-message{
-    margin: 0 0 2.5rem;
+    margin: 0;
     color: red;
-    display: none;
+    visibility: hidden;
+    font-size: 0.8rem;
+}
+#mortgage-term-error-message.visible{
+    visibility: visible;
 }
 
 #interest-rate-error-message{
-    margin: 0 0 2.5rem;
+    margin: 0;
     color: red;
-    display: none;
+    visibility: hidden;
+    font-size: 0.8rem;
+}
+#interest-rate-error-message.visible{
+    visibility: visible;
 }
 
 #rOrI-error-message{
-    margin: 1rem 0 2.5rem;
+    margin: 0;
     color: red;
-    display: none;
+    visibility: hidden;
+    font-size: 0.8rem;
+}
+#rOrI-error-message.visible{
+    visibility: visible;
 }
 
 /*your results container code*/
