@@ -179,10 +179,10 @@ h1{
 #mortgage-container .input-sign{
     position: absolute;
     font-size: 1rem;
-    right: 1.8px;
+    right: 1.2px;
     pointer-events: none;
-    top: 28.5%;
-    padding: 20.5px 23px 24.5px 20.5px;
+    top: 29%;
+    padding: 20.5px 23px 25px 20.5px;
     border-radius: 0 5px 5px 0;
     color: var(--inner-dark-blue);
     background-color: var(--signs-background);
@@ -205,17 +205,16 @@ h1{
 }
 #interest-rate:focus{
     border-color: var(--bright-green);
-    color: var(--white);
     outline: none;
 }
 
 #interest-rate-container .input-sign{
     position: absolute;
     font-size: 1.3rem;
-    right: 1.5px;
+    right: 1.1px;
     pointer-events: none;
-    top: 28.5%;
-    padding: 20.5px 23px 24.5px 20.5px;
+    top: 29%;
+    padding: 20.5px 23px 25px 20.5px;
     border-radius: 0 5px 5px 0;
     color: var(--inner-dark-blue);
     background-color: var(--signs-background);
@@ -248,12 +247,11 @@ h1{
 #mortgage-amount-container .input-sign{
     position: absolute;
     font-size: 1.5rem;
-    top: 26.5%;
-    padding: 20.5px 23px 24.5px 20.5px;
+    top: 26%;
+    padding: 20.5px 23px 25.5px 20.5px;
     left: 1.5px;
     pointer-events: none;
     color: var(--inner-dark-blue);
-    padding: 20.5px 23px 24.5px 20.5px;
     background-color: var(--signs-background);
     border-radius: 5px 0 0 5px;
 }
@@ -402,6 +400,7 @@ input[type="number"] {
     color: var(--white);
     background-color: var(--dark-blue);
     border-radius: 0 20px 20px 80px;
+    display: show;
 }
 
 @media (max-width: 768px){
@@ -448,7 +447,7 @@ h2{
     margin-top: 3rem;
 }
 
-#the-result{
+#monthly-Payment{
     font-size: 3rem;
     font-weight: bold;
     opacity: 100%;

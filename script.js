@@ -1,8 +1,9 @@
 //assign elements to variables
+const illustrationPage = document.getElementById("right-side-container");
+const resultsPage = document.getElementById("your-results-container");
 
-//default page and calculations page
-const defaultPage = document.getElementsByClassName("defaultPage");
-const calculationsPage = document.getElementsByClassName("calculationsPage");
+const monthlyPay = document.getElementById("monthly-Payment");
+const totalPay = document.getElementById("payment-over-term");
 
 //mortgage amount container
 const mortgageAmountContainer = document.getElementById("mortgage-amount");
@@ -17,7 +18,7 @@ const interestRateContainer = document.getElementById("interest-rate");
 const interestRateErrorMessage = document.getElementById("interest-rate-error-message");
 
 //repayment and interest radio button section
-const mortgageType = document.getElementsByName("radios");
+const SelectedmortgageType = document.querySelector('input[name="mortgageType"]:checked');
 const rOrIErrorMessage = document.getElementById("rOrI-error-message");
 
 //calculate repayments button
@@ -62,7 +63,7 @@ btn.addEventListener('click', () => {
     const principal = parseFloat(mortgageAmountContainer.value);
     const yrs = parseFloat(mortgageTermContainer.value);
     const interest = parseFloat(interestRateContainer.value);
-    const mortgageType = document.querySelectorAll('input[type="radio"]');
+    const SelectedmortgageType = document.querySelector('input[name="mortgageType"]:checked');
 
     
 
@@ -77,7 +78,6 @@ btn.addEventListener('click', () => {
         mortgageAmountErrorMessage.classList.remove("visible");
         mortgageSign.classList.remove("red");
         mortgageAmountContainer.style.borderColor = "";
-        isValid = true;
     }
 
     if(isNaN(yrs) || yrs <= 0){
@@ -89,7 +89,6 @@ btn.addEventListener('click', () => {
         mortgageTermErrorMessage.classList.remove("visible");
         mortgageTermSign.classList.remove("red");
         mortgageTermContainer.style.borderColor = "";
-        isValid = true;
     }
 
     if(isNaN(interest) || interest <= 0){
@@ -101,14 +100,48 @@ btn.addEventListener('click', () => {
         interestRateErrorMessage.classList.remove("visible");
         interestRateSign.classList.remove("red");
         interestRateContainer.style.borderColor = "";
-        isValid = true;
     }
 
-    const checkedMortgageType = Array.from(mortgageType).some(radio => radio.checked);
-    if(!checkedMortgageType){
+    
+    if(!SelectedmortgageType){
         rOrIErrorMessage.classList.add("visible");
     } else {
         rOrIErrorMessage.classList.remove("visible");
+    }
+
+
+    if(isValid){
+        let monthlyPayment = 0;
+        let totalPayment = 0;
+
+        illustrationPage.style.display = "none";
+        resultsPage.style.display ="block"
+
+
+        if(SelectedmortgageType.value === "repayment"){
+            const monthlyRate = (interest / 100) / 12;
+            const n = yrs * 12;
+
+
+            monthlyPayment =(principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -n));
+            totalPayment = monthlyPayment * n;
+
+        } else if (SelectedmortgageType.value === "interest-only"){
+            monthlyPayment = (principal * interest) / 12;
+            totalPayment = monthlyPayment * yrs * 12;
+
+        }
+        
+        monthlyPay.innerText = `$${monthlyPayment.toFixed(2)}`;
+        totalPay.innerText = `$${totalPayment.toFixed(2)}`;
+
+        } else {
+        monthlyPay.innerText = "";
+        totalPay.innerText = "";
+
+        illustrationPage.style.display = "none";
+        resultsPage.style.display ="block"
+
     }
 })
 
